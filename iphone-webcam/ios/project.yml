@@ -1,0 +1,27 @@
+# XcodeGen spec. On the Mac:  brew install xcodegen && cd ios && xcodegen
+# That writes iPhoneCam.xcodeproj next to this file. Open it, pick your team
+# under Signing & Capabilities, plug in the iPhone and press Run.
+name: iPhoneCam
+options:
+  bundleIdPrefix: com.erimgiray
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+    CODE_SIGN_STYLE: Automatic
+targets:
+  iPhoneCam:
+    type: application
+    platform: iOS
+    sources:
+      - iPhoneCam
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.erimgiray.iphonecam
+        INFOPLIST_FILE: Info.plist
+        TARGETED_DEVICE_FAMILY: "1"
+        MARKETING_VERSION: "0.1"
+        CURRENT_PROJECT_VERSION: "1"
